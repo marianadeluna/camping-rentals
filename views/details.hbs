@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		{{> title pageTitle="CER: Login"}}
+
+	</head>
+<style>
+h1 {
+        color: #1D6215;
+}
+</style>
+	<body bgcolor="#FFFFFF">
+		{{> header largeLogo=true}}
+
+		<center><h1>Welcome!</h1></center>
+		<center><h3>Login to begin renting FREE camping equipment.
+		We have everything from car camping to backpacking. Courtesy of the non-profit
+		organization, Felix Ventures.</h3></center>
+
+		<center><h4>Enter your details below</h4></center>
+
+    {{#if errorMessage.length}}
+      <hr/>
+      {{#each errorMessage}}
+        <h3>{{this}}</h3>
+      {{/each}}
+      <hr/>
+    {{/if}}
+
+		<form method="POST" action="/details">
+			<center><table border="1">
+				<tr><td>First Name:</td><td><input type="text" name="fname"/></td></tr>
+				<tr><td>Last Name:</td><td><input type="text" name="lname"/></td></tr>
+				<tr><td>Email:</td><td><input type="text" name="email"/></td></tr>
+				<tr><td colspan="2"><input type="submit" value="Enter"/></td></tr>
+			</table></center>
+		</form>
+	</body>
+</html>

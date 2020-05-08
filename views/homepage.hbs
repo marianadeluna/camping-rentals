@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> title pageTitle="CER: Homepage"}}
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	body {font-family: Arial;}
+
+		.btn {
+	  border: none;
+	  background-color: inherit;
+	  padding: 14px 28px;
+	  font-size: 16px;
+	  cursor: pointer;
+	  display: inline-block;
+	}
+
+	.btn:hover {background: #eee;}
+
+	.success {color: green;}
+
+		.tab {
+		    overflow: hidden;
+		    border: 3px solid #ccc;
+		    background-color: #1D6215;
+		}
+
+		.tab button {
+		    background-color: inherit;
+		    float: left;
+		    border: none;
+		    outline: none;
+		    cursor: pointer;
+		    padding: 14px 16px;
+		    transition: 0.3s;
+		    font-size: 17px;
+		}
+
+		.tab button:hover {
+		    background-color: #ddd;
+		}
+
+		.tab button.active {
+		    background-color: #FFFFFF;
+		}
+
+		.tabcontent {
+		    display: none;
+		    padding: 6px 12px;
+		    border: 1px solid #ccc;
+		    border-top: none;
+		}
+		</style>
+
+<body>
+	{{>header logoutLink=true}}
+
+
+	{{#if errorMessage.length}}
+		<hr />
+		{{#each errorMessage}}
+			<h3>{{this}}</h3>
+		{{/each}}
+		<hr />
+	{{/if}}
+
+
+	<h2>Types of Camping Equipment</h2>
+	<p>Choose which category of camping equipment you would like to rent:</p>
+
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event, 'General')">General</button>
+		<button class="tablinks" onclick="openTab(event, 'Car Camping')">Car Camping</button>
+		<button class="tablinks" onclick="openTab(event, 'Backpacking')">Backpacking</button>
+	</div>
+
+	<form method="POST" action="/confirmation">
+
+
+		<div id="General" class="tabcontent">
+			<h3>General</h3>
+			<p>Choose from our wide range of equipment:</p>
+			<div>
+				<input type="checkbox" name="equipment" value="Compass">
+				<label>
+					<font size="4">Compass</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Cooler">
+				<label>
+					<font size="4">Cooler</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Emergency Foil Blanket">
+				<label>
+					<font size="4">Emergency Foil Blanket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Firewood">
+				<label>
+					<font size="4">Firewood</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="First Aid Kit">
+				<label>
+					<font size="4">First Aid Kit</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Flashlight">
+				<label>
+					<font size="4">Flashlight</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Kitchen Kit">
+				<label>
+					<font size="4">Kitchen Kit (9 items)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Lantern">
+				<label>
+					<font size="4">Lantern</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Nylon Cord">
+				<label>
+					<font size="4">Nylon Cord (50ft)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Sleeping Bag">
+				<label>
+					<font size="4">Sleeping Bag</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tarp">
+				<label>
+					<font size="4">Tarp</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tent">
+				<label>
+					<font size="4">Tent</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Bucket">
+				<label>
+					<font size="4">Water Bucket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Filter">
+				<label>
+					<font size="4">Water Filter</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Waterproof Matches">
+				<label>
+					<font size="4">Waterproof Matches</font>
+				</label>
+			</div>
+		</div>
+
+
+		<div id="Car Camping" class="tabcontent">
+			<h3>Car Camping</h3>
+			<p>Choose from our wide range of equipment:</p>
+			<div>
+				<input type="checkbox" name="equipment" value="Compass">
+				<label>
+					<font size="4">Compass</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Cooler">
+				<label>
+					<font size="4">Cooler</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Emergency Foil Blanket">
+				<label>
+					<font size="4">Emergency Foil Blanket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Firewood">
+				<label>
+					<font size="4">Firewood</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="First Aid Kit">
+				<label>
+					<font size="4">First Aid Kit</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Flashlight">
+				<label>
+					<font size="4">Flashlight</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Kitchen Kit">
+				<label>
+					<font size="4">Kitchen Kit (9 items)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Lantern">
+				<label>
+					<font size="4">Lantern</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Nylon Cord">
+				<label>
+					<font size="4">Nylon Cord (50ft)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Sleeping Bag">
+				<label>
+					<font size="4">Sleeping Bag</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tarp">
+				<label>
+					<font size="4">Tarp</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tent">
+				<label>
+					<font size="4">Tent</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Bucket">
+				<label>
+					<font size="4">Water Bucket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Filter">
+				<label>
+					<font size="4">Water Filter</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Waterproof Matches">
+				<label>
+					<font size="4">Waterproof Matches</font>
+				</label>
+			</div>
+		</div>
+
+
+
+		<div id="Backpacking" class="tabcontent">
+			<h3>Backpacking</h3>
+			<p>Choose from our wide range of equipment:</p>
+			<div>
+				<input type="checkbox" name="equipment" value="Compass">
+				<label>
+					<font size="4">Compass</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Emergency Foil Blanket">
+				<label>
+					<font size="4">Emergency Foil Blanket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="First Aid Kit">
+				<label>
+					<font size="4">First Aid Kit</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Flashlight">
+				<label>
+					<font size="4">Flashlight</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Kitchen Kit">
+				<label>
+					<font size="4">Kitchen Kit (9 items)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Nylon Cord">
+				<label>
+					<font size="4">Nylon Cord (50ft)</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Sleeping Bag">
+				<label>
+					<font size="4">Sleeping Bag</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tarp">
+				<label>
+					<font size="4">Tarp</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Tent">
+				<label>
+					<font size="4">Tent</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Bucket">
+				<label>
+					<font size="4">Water Bucket</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Water Filter">
+				<label>
+					<font size="4">Water Filter</font>
+				</label>
+			</div>
+			<div>
+				<input type="checkbox" name="equipment" value="Waterproof Matches">
+				<label>
+					<font size="4">Waterproof Matches</font>
+				</label>
+			</div>
+		</div>
+		</div>
+
+
+		<script>
+			function openTab(evt, type) {
+		    var i, tabcontent, tablinks;
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+		    document.getElementById(type).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+
+		</script>
+
+		<button class="btn success" type="submit" value="Submit">Submit</button>
+		<button class="btn success" type="reset" value="Reset Form">Reset Form</button></form><form method="POST" action="/deletesession"><button class="btn success" type="submit" value="Logout">Cancel</button>
+	<p></p>
+
+
+</body>
+
+</html>

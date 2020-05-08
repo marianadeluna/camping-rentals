@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> title pageTitle="CER: Confirmed"}}
+
+</head>
+<style>
+	<style>
+	.btn {
+	border: none;
+	background-color: inherit;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.success {color: green;}
+
+h1 {
+        color: #1D6215;
+}
+</style>
+
+<body bgcolor="#FFFFFF">
+	{{> header largeLogo=true}}
+
+	<center>
+		<h1>Your Order Was Sent!</h1>
+	</center>
+	<center>
+		<h3>Congratulations! Your order should be sent to your email.</h3>
+	</center>
+	<center>
+		<h3>Return to homepage to request more rental equipment.</h3>
+	</center>
+
+	{{#if errorMessage.length}}
+		<hr />
+		{{#each errorMessage}}
+			<h3>{{this}}</h3>
+		{{/each}}
+		<hr />
+	{{/if}}
+
+	<center>
+			<a href="/">Back to Homepage</a>
+	</center>
+
+
+</body>
+
+</html>
